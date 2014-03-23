@@ -8,12 +8,17 @@
 
 // include the SD library:
 #include <SPI.h>
-#include <SD.h>
+
+
+#include <SdFat.h>
+#include <SdFatUtil.h>
 
 uint8_t const SD_INIT_SUCCESS = 0;
 uint8_t const SD_ERROR_CARD_INIT = 1;
 uint8_t const SD_ERROR_UNKNOWN_TYPE = 2;
 uint8_t const SD_ERROR_PARTITION = 3;
+uint8_t const SD_ERROR_ROOT_FAIL = 4;
+
 
 
 class Words {
@@ -28,6 +33,8 @@ class Words {
   SdVolume _volume;
   SdFile _root;
   SdFile _file;
+  void _error_P(const char* str);
+
 };
 
 #endif

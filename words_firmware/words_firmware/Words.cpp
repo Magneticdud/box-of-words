@@ -7,7 +7,6 @@
 
 // include the SD library:
 #include <SPI.h>
-#include <SD.h>
 #include <SdFat.h>
 #include <SdFatUtil.h>
 
@@ -15,17 +14,37 @@
 Sd2Card _card;
 SdVolume _volume;
 SdFile _root;
-SdFo;e _file;
+SdFile _file;
 
+
+  
+  // store error strings in flash to save RAM
+#define error(s) error_P(PSTR(s))
+  
+  
 Words::Words(int CSPin)
 {
   _CSPin = CSPin;
 }
 
+void _error_P(const char* str) {
+  PgmPrint("error: ");
+  SerialPrintln_P(str);
+  if (_card.errorCode()) {
+    PgmPrint("SD error: ");
+    Serial.print(_card.errorCode(), HEX);
+    Serial.print(',');
+    Serial.println(_card.errorData(), HEX);
+  }
+  while(1);
+}
+
 uint8_t Words::init()
 {
+  
+  
   // Open serial communications and wait for port to open:
-  Serial.begin(9600);
+
    while (!Serial) {
     ; // wait for serial port to connect. Needed for Leonardo only
   }
@@ -59,13 +78,16 @@ uint8_t Words::init()
     return SD_ERROR_PARTITION;
   }
 
-  _root.openRoot(_volume);
+  if (!_root.openRoot(_volume)) {
+   return SD_ERROR_ROOT_FAIL; 
+  }
   
   // list all files in the card with date and size
   _root.ls(LS_R | LS_DATE | LS_SIZE);
   
   return SD_INIT_SUCCESS;
 }
+
 
  void Words::getFilesList(char **files, int array_size) {
    
@@ -74,10 +96,47 @@ uint8_t Words::init()
  for (int i = 0; i < array_size; i++) {
   files[i] = "This is file "; 
  }
+ /*
  
- 
+// This code is just copied from SdFile.cpp in the SDFat library
+  // and tweaked to print to the client output in html!
+  dir_t p;
+  
+  _root.rewind();
+String name;
+int cnt = 0;
 
+  while (_root.readDir(p) > 0) {
+    // done if past last used entry
+    if (p.name[0] == DIR_NAME_FREE) break;
+
+    // skip deleted entry and entries for . and  ..
+    if (p.name[0] == DIR_NAME_DELETED || p.name[0] == '.') continue;
+
+    // only list subdirectories and files
+    if (!DIR_IS_FILE_OR_SUBDIR(&p)) continue;
 
  
+    
+    // print file name with possible blank fill
+    for (uint8_t i = 0; i < 11; i++) {
+      if (p.name[i] == ' ') continue;
+      
+      if (i == 8) {
+        name = name + '.';
+      }
+      
+      name = name + (char)p.name[i];
+    }
+    
+    cnt++;
+    files[cnt] = "name";
+    if (cnt >= array_size) {
+      break;
+    }
+
+  }
+
+ */
  
 }

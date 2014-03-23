@@ -1,6 +1,10 @@
 
 #include <SPI.h>
-#include <SD.h>
+
+
+
+#include <SdFat.h>
+#include <SdFatUtil.h>
 
 #include "Words.h"
 
@@ -9,6 +13,7 @@ Words words(10);
   
 void setup()
 {
+    Serial.begin(9600);
  words.init();
 }
 
