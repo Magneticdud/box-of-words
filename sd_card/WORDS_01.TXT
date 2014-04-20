@@ -1,0 +1,118 @@
+Actor
+Ambassador
+Animator
+Barista
+Bartender
+Body Guard
+Conductor
+Curator
+Director
+Disc Jockey
+Dog Walker
+Fashion Designer
+Firemen
+Florist
+Football Player
+Garbage Man
+Horse Whisperer
+Interpreter
+Jockey
+Journalist
+Librarian
+Lobbyist
+Model
+Nuclear Physicist
+Pediatrician
+Personal Trainer
+Photographer
+Pianist
+Plumber
+Prime Minister
+Private Detective
+Professor
+Race Car Driver
+Rocket Scientist
+Sculptor
+Seamstress
+Sous Chef
+Stage Manager
+Taxi Driver
+Taxidermist
+Therapist
+Video Jockey
+accountant
+actor
+air steward
+architect
+assistant
+personal assistant
+shop assistant
+author
+baker
+barman
+builder
+businessman
+butcher
+caretaker
+chef
+civil servant
+clerk
+programmer
+cook
+decorator
+dentist
+designer
+director
+company director
+film director
+doctor
+train driver
+garbageman
+economist
+editor
+electrician
+engineer
+farmer
+fisherman
+fishmonger
+flight attendant
+hairdresser
+head teacher
+jeweler
+journalist
+judge
+lawyer
+lecturer
+manager
+miner
+musician
+news reader
+nurse
+optician
+painter
+photographer
+pilot
+plumber
+police officer
+politician
+porter
+printer
+prison officer
+receptionist
+sailor
+salesman
+scientist
+secretary
+soldier
+solicitor
+surgeon
+tailor
+teacher
+telephonist
+telephone operator
+travel agent
+TV cameraman
+TV presenter
+vet
+waiter
+writer

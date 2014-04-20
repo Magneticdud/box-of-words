@@ -1,0 +1,10 @@
+brightness=199
+title0=Emotions
+title1=Professions
+title2=Places
+title3=Locations
+title4=Numbers
+title5=Moods
+title6=Cars
+title7=Sentences
+
