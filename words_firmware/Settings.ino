@@ -71,6 +71,8 @@ void readSettingsFile() {
           
           
         } else if(description == "title0") {
+          
+
            value = "";
            do {
              value.concat(character);
@@ -79,8 +81,9 @@ void readSettingsFile() {
            
            char charBuf[value.length()+1];
           value.toCharArray(charBuf, value.length());  
-           Serial.print("Value is: ");Serial.println(value);
-           Serial.print
+          charBuf[value.length()] = '\0';
+           Serial.print("Value is: ");Serial.println(charBuf);
+
 fileTitles[0] = charBuf;
         
         } 
@@ -94,7 +97,8 @@ fileTitles[0] = charBuf;
           value.toCharArray(charBuf, value.length());  
            
 fileTitles[1] = charBuf;
-        
+
+        Serial.println(value);
         }
         else if(description == "title2") {
            value = "";

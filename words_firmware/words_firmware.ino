@@ -4,20 +4,28 @@
 #include <MenuBackend.h>
 #include "WordFile.h"
 
-LiquidCrystal lcd(9, 7, 5, 4, 3, 2);
-
-char* fileList[] = {"WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT","WORDS_04.TXT","WORDS_05.TXT","WORDS_06.TXT","WORDS_07.TXT", "WORDS_08.TXT"};
-char* fileTitles[8] = {"Emotions1", "Places2", "Numbers", "Names", "Activities", "Letters", "Positions", "Games"};
-
-#define SD_CS_PIN 8
-#define NUMBER_OF_FILES 8
+#include <MemoryFree.h>
 
 typedef struct Settings {
  byte brightness;
 } Settings;
 
-Settings settings = {.brightness = 255};
+Settings settings = {
+  .brightness = 255
+};
 
+LiquidCrystal lcd(9, 7, 5, 4, 3, 2);
+
+char* fileList[] = {"WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT","WORDS_04.TXT","WORDS_05.TXT","WORDS_06.TXT","WORDS_07.TXT", "WORDS_08.TXT"};
+char* fileTitles[8] = {"Code1", "Code2", "Code3","Code4","","","",""};
+
+#define SD_CS_PIN 8
+#define NUMBER_OF_FILES 8
+
+
+
+int selectedFile = -1;
+boolean wait = true;
 
 void setup()
 {
@@ -31,6 +39,8 @@ void setup()
   pinMode(A3, INPUT_PULLUP);
   pinMode(A2, INPUT_PULLUP);
  
+    Serial.begin(9600);
+    
   lcd.begin(16,2);
   lcd.noAutoscroll();
   lcd.print("Hold on, loading...");
@@ -46,54 +56,68 @@ void setup()
     delay(2000);
   }
   
-  initSettings();
-  
+ // initSettings();
+
   lcd.clear();
+
+  buildMenu();
+  
+  Serial.println("Starting navigation:\r\nUp: w   Down: s   Left: a   Right: d   Use: e");
+
 }
 
 
 
 void loop(void) {
-   Serial.begin(9600);
-  Serial.println("Starting navigation:\r\nUp: w   Down: s   Left: a   Right: d   Use: e");
-  Serial.print("Brightness: ");
-  Serial.println(settings.brightness);
-  Serial.print("Title0: ");
-  Serial.println(fileTitles[0]);
+
     
-  buildMenu();
   
-  while (true) {
+  while (selectedFile == -1) {
     showMenu();
   }
   
-  WordFile words = WordFile(fileList[0]);
+  WordFile words = WordFile(fileList[selectedFile]);
   words.init();  
-  lcd.print(fileList[0]);
+  
+  lcd.print(fileList[selectedFile]);
   
   if (words.countLines() == 0) {
     lcd.setCursor(0,1);
     lcd.print("File is empty"); 
     lcd.setCursor(0,0);
   } else {
-    String randomWord =  words.getRandomWord();
-    displayWord(randomWord);
     
-    ////////////*
-    
-    boolean goToNext = false;
-    while(!goToNext) {
-      if(digitalRead(A4) == LOW) {
-       delay(20);
-       if(digitalRead(A4) == LOW) {        
-         goToNext = true;
-       }
-      } else {
-       delay(100); 
+    while (selectedFile != -1) {
+      String randomWord =  words.getRandomWord();
+      displayWord(randomWord);
+      wait = true;
+      ////////////*
+      /*
+      boolean goToNext = false;
+      while(!goToNext) {
+        if(digitalRead(A4) == LOW) {
+         delay(20);
+         if(digitalRead(A4) == LOW) {        
+           goToNext = true;
+         }
+        } else {
+         delay(100); 
+        }
+      }*/
+      /////////////
+      
+      while (wait) {
+        if (Serial.available()) {
+	  byte read = Serial.read();
+	  switch (read) {
+	    case 'd': wait = false; break;
+	    case 'w': selectedFile = -1; wait = false; break;
+	  }
+	} else {
+          delay(100);
+        }
       }
     }
-    /////////////
-    
   }
 
     lcd.clear();
