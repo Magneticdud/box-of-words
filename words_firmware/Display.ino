@@ -1,5 +1,4 @@
 #define LCD_LED_PIN 10
-#define LCD_CONTRAST_PIN 6
 
 void displayWord(String randomWord) {
  
@@ -12,6 +11,3 @@ void setBrightness(byte level) {
  analogWrite(LCD_LED_PIN, level);
 }
 
-void setContrast(byte level) {
- analogWrite(LCD_CONTRAST_PIN, level);
-}

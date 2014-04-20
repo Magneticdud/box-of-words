@@ -13,11 +13,7 @@ const char wordDelimiter = '\n';
 WordFile::WordFile(char* fileName)
 {
  _fileName = fileName;
-  randomSeed(analogRead(0));
- 
-  // make sure that the default chip select pin is set to
-  // output, even if you don't use it:
-  pinMode(10, OUTPUT);
+  randomSeed(analogRead(A0));
  
 }
 
