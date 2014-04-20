@@ -6,6 +6,12 @@
 
 #include <MemoryFree.h>
 
+
+#define SD_CS_PIN 8
+#define NUMBER_OF_FILES 8
+
+
+
 typedef struct Settings {
  byte brightness;
 } Settings;
@@ -19,9 +25,7 @@ LiquidCrystal lcd(9, 7, 5, 4, 3, 2);
 char* fileList[] = {"WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT","WORDS_04.TXT","WORDS_05.TXT","WORDS_06.TXT","WORDS_07.TXT", "WORDS_08.TXT"};
 char* fileTitles[8] = {"Code1", "Code2", "Code3","Code4","","","",""};
 
-#define SD_CS_PIN 8
-#define NUMBER_OF_FILES 8
-
+String fileTitleStrings[NUMBER_OF_FILES];
 
 
 int selectedFile = -1;
@@ -56,7 +60,7 @@ void setup()
     delay(2000);
   }
   
- // initSettings();
+  initSettings();
 
   lcd.clear();
 

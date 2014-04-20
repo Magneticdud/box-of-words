@@ -72,19 +72,13 @@ void readSettingsFile() {
           
         } else if(description == "title0") {
           
-
            value = "";
            do {
              value.concat(character);
              character = settingsFile.read();
            } while(character != '\n');
            
-           char charBuf[value.length()+1];
-          value.toCharArray(charBuf, value.length());  
-          charBuf[value.length()] = '\0';
-           Serial.print("Value is: ");Serial.println(charBuf);
-
-fileTitles[0] = charBuf;
+fileTitleStrings[0] = value;
         
         } 
         else if(description == "title1") {
@@ -93,12 +87,7 @@ fileTitles[0] = charBuf;
              value.concat(character);
              character = settingsFile.read();
            } while(character != '\n');
-             char charBuf[value.length()+1];
-          value.toCharArray(charBuf, value.length());  
-           
-fileTitles[1] = charBuf;
-
-        Serial.println(value);
+           fileTitleStrings[1] = value;
         }
         else if(description == "title2") {
            value = "";
@@ -106,11 +95,8 @@ fileTitles[1] = charBuf;
              value.concat(character);
              character = settingsFile.read();
            } while(character != '\n');
-            char charBuf[value.length()+1];
-          value.toCharArray(charBuf, value.length());  
-           
-fileTitles[2] = charBuf;
-        
+                     fileTitleStrings[2] = value;
+
         }
         else if(description == "title3") {
            value = "";
@@ -118,10 +104,7 @@ fileTitles[2] = charBuf;
              value.concat(character);
              character = settingsFile.read();
            } while(character != '\n');
-             char charBuf[value.length()+1];
-          value.toCharArray(charBuf, value.length());  
-           
-fileTitles[3] = charBuf;
+           fileTitleStrings[3] = value;
         
         }
         else if(description == "title4") {
@@ -133,7 +116,7 @@ fileTitles[3] = charBuf;
             char charBuf[value.length()+1];
           value.toCharArray(charBuf, value.length());  
            
-fileTitles[4] = charBuf;
+strncpy(fileTitles[4], charBuf, value.length()+1);
         
         }
         else if(description == "title5") {
@@ -145,7 +128,7 @@ fileTitles[4] = charBuf;
              char charBuf[value.length()+1];
           value.toCharArray(charBuf, value.length());  
            
-fileTitles[5] = charBuf;
+strncpy(fileTitles[5], charBuf, value.length()+1);
         
         }
         else if(description == "title6") {
@@ -156,9 +139,7 @@ fileTitles[5] = charBuf;
            } while(character != '\n');
              char charBuf[value.length()+1];
           value.toCharArray(charBuf, value.length());  
-           
-fileTitles[6] = charBuf;
-        
+        strncpy(fileTitles[6], charBuf, value.length()+1);
         }
         else if(description == "title7") {
            value = "";
@@ -169,7 +150,7 @@ fileTitles[6] = charBuf;
             char charBuf[value.length()+1];
           value.toCharArray(charBuf, value.length());  
            
-fileTitles[7] = charBuf;
+strncpy(fileTitles[7], charBuf, value.length()+1);
         
         }
         

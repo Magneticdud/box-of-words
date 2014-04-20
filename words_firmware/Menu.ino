@@ -4,26 +4,33 @@
 
 MenuBackend menu = MenuBackend(menuUseEvent, menuChangeEvent);
 
-MenuItem fileItems[NUMBER_OF_FILES] = {
-  MenuItem(fileTitles[0], '0'),
-  MenuItem(fileTitles[1], '1'),
-  MenuItem(fileTitles[2], '2'),
-  MenuItem(fileTitles[3], '3'),
-  MenuItem(fileTitles[4], '4'),
-  MenuItem(fileTitles[5], '5'),
-  MenuItem(fileTitles[6], '6'),
-  MenuItem(fileTitles[7], '7'),
-};
 
 void buildMenu() {
   
+  char charBuf0[fileTitleStrings[0].length()+1];
+  fileTitleStrings[0].toCharArray(charBuf0, fileTitleStrings[0].length()+1);  
+  MenuItem miFile0 = MenuItem(charBuf0, '0');
+
+  char charBuf1[fileTitleStrings[1].length()+1];
+  fileTitleStrings[1].toCharArray(charBuf1, fileTitleStrings[1].length()+1);  
+  MenuItem miFile1 = MenuItem(charBuf1, '1');    
+
+  char charBuf2[fileTitleStrings[2].length()+1];
+  fileTitleStrings[2].toCharArray(charBuf2, fileTitleStrings[2].length()+1);  
+  MenuItem miFile2 = MenuItem(charBuf2, '2');    
 
 
-  menu.getRoot().add(fileItems[0]);
-  fileItems[0].addRight(fileItems[1]);
-  fileItems[1].addRight(fileItems[2]);
-  fileItems[2].addRight(fileItems[3]);
-  fileItems[3].addRight(fileItems[0]);
+  char charBuf3[fileTitleStrings[3].length()+1];
+  fileTitleStrings[3].toCharArray(charBuf3, fileTitleStrings[3].length()+1);  
+  MenuItem miFile3 = MenuItem(charBuf3, '3');    
+
+Serial.println(miFile3.getName());
+
+  menu.getRoot().add(miFile0);
+  miFile0.addRight(miFile1);
+  miFile1.addRight(miFile2);
+  miFile2.addRight(miFile3);
+  miFile3.addRight(miFile0);
   
   menu.moveDown();
 }
