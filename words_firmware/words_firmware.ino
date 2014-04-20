@@ -1,15 +1,17 @@
 
 #include <SD.h>
-#include <LiquidCrystal.h>
-#include <MenuBackend.h>
+#include <PortsLCD.h>
 #include "WordFile.h"
-
+#include <Bounce2.h>
+#include <JeeLib.h> 
 #include <MemoryFree.h>
-
 
 #define SD_CS_PIN 8
 #define NUMBER_OF_FILES 8
 
+
+// Setup watchdog
+ISR(WDT_vect) { Sleepy::watchdogEvent(); }
 
 
 typedef struct Settings {
@@ -22,11 +24,13 @@ Settings settings = {
 
 LiquidCrystal lcd(9, 7, 5, 4, 3, 2);
 
-char* fileList[] = {"WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT","WORDS_04.TXT","WORDS_05.TXT","WORDS_06.TXT","WORDS_07.TXT", "WORDS_08.TXT"};
-char* fileTitles[8] = {"Code1", "Code2", "Code3","Code4","","","",""};
+char* fileList[] = {"WORDS_00.TXT","WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT","WORDS_04.TXT","WORDS_05.TXT","WORDS_06.TXT", "WORDS_07.TXT"};
+String fileTitles[8] = {"WORDS_00.TXT","WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT","WORDS_04.TXT","WORDS_05.TXT","WORDS_06.TXT", "WORDS_07.TXT"};
 
-String fileTitleStrings[NUMBER_OF_FILES];
-
+Bounce buttonLeft = Bounce();
+Bounce buttonRight = Bounce();
+Bounce buttonEnter = Bounce();
+Bounce buttonBack = Bounce();
 
 int selectedFile = -1;
 boolean wait = true;
@@ -42,48 +46,56 @@ void setup()
   pinMode(A4, INPUT_PULLUP);
   pinMode(A3, INPUT_PULLUP);
   pinMode(A2, INPUT_PULLUP);
+  pinMode(A1, INPUT_PULLUP);
+  pinMode(A0, INPUT_PULLUP);
  
-    Serial.begin(9600);
+  buttonLeft.attach(A5);
+  buttonRight.attach(A4);
+  buttonEnter.attach(A3);
+  buttonBack.attach(A2);
+  
+  Serial.begin(9600);
     
   lcd.begin(16,2);
+  
   lcd.noAutoscroll();
-  lcd.print("Hold on, loading...");
+  lcd.print("   BoxOfWords   ");
+  lcd.setCursor(0,1);
+  lcd.print("A. Roots 2014-04");
     
   setBrightness(settings.brightness);
   
-  delay(20);
+  delay(2000);
 
   // See if the card is present and can be initialized
   while(!SD.begin(SD_CS_PIN)) {
     lcd.clear();
     lcd.print("Insert SD card.");
-    delay(2000);
+    Sleepy::loseSomeTime(2000);
   }
   
   initSettings();
 
   lcd.clear();
 
-  buildMenu();
-  
-  Serial.println("Starting navigation:\r\nUp: w   Down: s   Left: a   Right: d   Use: e");
-
+  lcd.print(fileTitles[0]);
 }
 
 
 
 void loop(void) {
-
-    
   
-  while (selectedFile == -1) {
+/*  while (selectedFile == -1) {
     showMenu();
   }
+  */
+  selectedFile = 0;
   
   WordFile words = WordFile(fileList[selectedFile]);
   words.init();  
   
-  lcd.print(fileList[selectedFile]);
+  lcd.clear();
+  lcd.print(fileTitles[selectedFile]);
   
   if (words.countLines() == 0) {
     lcd.setCursor(0,1);
@@ -93,39 +105,38 @@ void loop(void) {
     
     while (selectedFile != -1) {
       String randomWord =  words.getRandomWord();
+      lcd.clear();
       displayWord(randomWord);
       wait = true;
-      ////////////*
-      /*
-      boolean goToNext = false;
-      while(!goToNext) {
-        if(digitalRead(A4) == LOW) {
-         delay(20);
-         if(digitalRead(A4) == LOW) {        
-           goToNext = true;
-         }
-        } else {
-         delay(100); 
-        }
-      }*/
-      /////////////
       
       while (wait) {
+        buttonEnter.update();
+        buttonRight.update();
+        buttonBack.update();
+        
+        if (buttonEnter.read() == LOW) {
+          wait = false;
+          delay(50);
+        }
+        
+/*        if (buttonBack.read() == LOW) {
+          selectedFile = -1;
+          wait = false;
+        }
+  */      
         if (Serial.available()) {
 	  byte read = Serial.read();
 	  switch (read) {
 	    case 'd': wait = false; break;
 	    case 'w': selectedFile = -1; wait = false; break;
 	  }
-	} else {
-          delay(100);
-        }
+	}
       }
     }
   }
 
     lcd.clear();
-  delay(3000);
+    Sleepy::loseSomeTime(3000);
 }
 
 
