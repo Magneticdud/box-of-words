@@ -1,118 +1,89 @@
+Accountant
 Actor
 Ambassador
 Animator
+Architect
+Assassin
+Assistant
+Baker
 Barista
 Bartender
 Body Guard
+Builder
+Businessman
+Butcher
+Caretaker
+Chef
+Clerk
 Conductor
+Cook
 Curator
+Decorator
+Dentist
+Designer
+Detective
 Director
-Disc Jockey
-Dog Walker
+Doctor
+Economist
+Editor
+Electrician
+Engineer
+Farmer
 Fashion Designer
-Firemen
+Film director
+Fireman
+Fisherman
+Flight attendant
 Florist
 Football Player
 Garbage Man
-Horse Whisperer
-Interpreter
+Hairdresser
+Jeweler
 Jockey
 Journalist
+Judge
+Lawyer
+Lecturer
 Librarian
 Lobbyist
+Manager
+Miner
 Model
+Musician
 Nuclear Physicist
-Pediatrician
+Nurse
+Painter
 Personal Trainer
 Photographer
 Pianist
+Pilot
 Plumber
+Police officer
+Politician
 Prime Minister
-Private Detective
+Prison officer
 Professor
+Programmer
 Race Car Driver
+Receptionist
 Rocket Scientist
+Sailor
+Salesman
+Scientist
 Sculptor
 Seamstress
-Sous Chef
+Secretary
+Soldier
 Stage Manager
+Surgeon
+Tailor
 Taxi Driver
-Taxidermist
+Teacher
 Therapist
-Video Jockey
-accountant
-actor
-air steward
-architect
-assistant
-personal assistant
-shop assistant
-author
-baker
-barman
-builder
-businessman
-butcher
-caretaker
-chef
-civil servant
-clerk
-programmer
-cook
-decorator
-dentist
-designer
-director
-company director
-film director
-doctor
-train driver
-garbageman
-economist
-editor
-electrician
-engineer
-farmer
-fisherman
-fishmonger
-flight attendant
-hairdresser
-head teacher
-jeweler
-journalist
-judge
-lawyer
-lecturer
-manager
-miner
-musician
-news reader
-nurse
-optician
-painter
-photographer
-pilot
-plumber
-police officer
-politician
-porter
-printer
-prison officer
-receptionist
-sailor
-salesman
-scientist
-secretary
-soldier
-solicitor
-surgeon
-tailor
-teacher
-telephonist
-telephone operator
-travel agent
+Train driver
+Travel agent
 TV cameraman
 TV presenter
-vet
-waiter
-writer
+Vet
+Waiter
+Writer

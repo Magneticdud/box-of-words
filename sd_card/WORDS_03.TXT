@@ -1,3 +1,95 @@
-Test
-entry
-to file
+Art Gallery
+Ambulance
+Adoption Clinic
+Amazon Rainforest
+Antique Store
+Attic
+Barbershop
+Balcony
+Boat
+Bakery
+Bootcamp
+Castle
+Chessboard
+Cheese Factory
+Circus
+Dance Studio
+Dragon's Lair
+Desert
+Egypt
+Execution Chamber
+Ferris Wheel
+Fire Station
+Fishing Pond
+Football Stadium
+Grocery Store
+Golf Course
+Ghost Town
+Garbage Dump
+Garage
+Goldmine
+Gypsy Camp
+Grand Canyon
+Hardware Store
+Helicopter
+Hogwarts
+Hospital
+Island
+Iceberg
+Ice Cream Shop
+Ice Age
+Jungle
+Jury Box
+Jewelry Store
+Karaoke Bar
+Knitting Circle
+Kangaroo Farm
+Lagoon
+Lighthouse
+Library
+Lifeboat
+Laundromat
+Mechanic's Shop
+Moon
+Mummy's Tomb
+Mountain Top
+Nursing Home
+News Station
+Nightclub
+Newspaper Office
+Orchestra Pit
+Office Cubicle
+Picnic Spot
+Prom
+Pirate Ship
+Pet Store
+Post Office
+Photography Class
+Police Station
+Quiz Show
+Robber's Hideout
+Safari
+School Lunchroom
+Nurse's Office
+Santa's Workshop
+Ski Slope
+Summer Camp
+Spaceship
+Second Hand Store
+Submarine
+Stable
+Treehouse
+Travel Agency
+Unemployment Office
+Vampire's Home
+Volleyball Court
+Volcano
+Witch's Cavern
+Warehouse
+White House
+Wrestling Ring
+Wild West
+Woodshop Class
+Wedding Ceremony
+Yoga Class
+Zoo

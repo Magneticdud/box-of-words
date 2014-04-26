@@ -1,10 +1,10 @@
 brightness=199
 title0=Emotions
 title1=Professions
-title2=Places
+title2=Relationships
 title3=Locations
-title4=Numbers
-title5=Moods
-title6=Cars
-title7=Sentences
+title4=Common Nouns
+title5=Adjectives
+title6=Improv Games
+title7=Countries
 

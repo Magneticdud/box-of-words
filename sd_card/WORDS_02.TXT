@@ -1,5 +1,98 @@
-My
-name
-is
-lois
-lane
+Husband-Wife
+Boyfriends
+Girlfriends
+A couple
+Father-Son
+Father-Daughter
+Mother-Son
+Mother-Daughter
+Bride-Groom
+Groom-Best Man
+Bride-Maid of Honor
+College Roomates
+Friends
+Old friends
+Neighbors
+Officer-Soldier
+Admiral-Sailor
+President-Aide
+Senator-Senator
+Clerk-Customer
+Waiter-Diner
+Chef-Assistant
+Chief-Indian
+Kung Fu Master-Student
+Teacher-Student
+King-Queen
+Driver-Passenger
+Bartender-Customer
+Boss-Employee
+Co-Workers
+Artist-Model
+Mad Scientist-Assistant
+Cowboy-Indian
+Cowboys
+Coach-Player
+Boxer-Trainer
+Boxer-Boxer
+Fellow Soldiers
+Sergeant-Private
+President-First Lady
+Brothers
+Sisters
+Priest-Confessor
+Bandmates
+Lawyer-Judge
+Lawyer-Client
+Knight-Lady
+Cops
+Cop-Captain
+Detective-Dame
+Robber-Victim
+Fellow Witches
+Ghosts
+Vampires
+Werevolves
+Blind Dates
+Fellow Politicians
+Rival Generals
+Captor-Prisoner
+Fellow Gods
+God-Devil
+Jesus-Apostle
+Pilot-Flight Attendant
+Flight Attendant-Passenger
+Passenger-Passenger
+Ship Captain-First Mate
+Knight-Dragon
+Wizard-Apprentice
+Magician-Assistant
+Landlord-Tenant
+Mafia Godfather-Henchman
+Salesman-Customer
+Mechanic-Customer
+Barber-Customer
+Trainer-Trainee
+Carpenter-Assistant
+Doctor-Patient
+Doctor-Doctor
+Doctor-Nurse
+Missionary-Heathen
+Actor-Director
+Santa Claus-Easter Bunny
+Transformers
+Billionaire-Servant
+Boss-Secretary
+Fire Chief-Fireman
+Co-Pilots
+Guards
+Warden-Prisoner
+Cop-Criminal
+Mentor-Mentee
+Fellow Explorers
+Loanshark-Victim
+Fellow Astronauts
+Lovers
+Rival programmers
+Alien-explorer
+Ghost-ghostbuster
