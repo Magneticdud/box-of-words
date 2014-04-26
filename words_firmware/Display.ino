@@ -9,7 +9,6 @@ void displayWord(String randomWord, byte selectedFile) {
   lcd.print(randomWord);
 
   lcd.setCursor(0,0);
-  Serial.println(randomWord);
 }
 
 void setBrightness(byte level) {
@@ -33,7 +32,7 @@ void marquee( String text)
     lcd.print(text[pos]);
   }
 
-  delay(1000);
+    Sleepy::loseSomeTime(1000);
   pos = 1;
 
 
@@ -46,10 +45,10 @@ void marquee( String text)
         return;
       }
     }
-    delay(180);
+    Sleepy::loseSomeTime(180);
     pos = pos + 1;
   }
-  delay(300);
+  Sleepy::loseSomeTime(300);
 }
 
 

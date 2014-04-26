@@ -1,11 +1,7 @@
 
 void showMenu() {
 
-  Serial.print("Current: "); 
-  Serial.println(menuIndex);
-
   if (refreshMenuDisplay) {
-    Serial.println("Refreshing display");
     showFileName(menuIndex);
     refreshMenuDisplay = false;
     delay(50);

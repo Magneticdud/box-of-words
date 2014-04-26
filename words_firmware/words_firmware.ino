@@ -1,13 +1,17 @@
-
+/**
+ * BoxOfWords firmware
+ *
+ * Licence: MIT
+ * Author: Ando Roots <david@sqroot.eu> 2014
+**/
 #include <SD.h>
-#include <PortsLCD.h>
-#include "WordFile.h"
-#include <JeeLib.h> 
-#include <MemoryFree.h>
+#include <PortsLCD.h> // From JeeLib, overrides LiquidCrystal
+#include "WordFile.h" // SD card wordfile reader
+#include <JeeLib.h>  // Power saving functions
 
-const byte SD_CS_Pin = 8;
-const byte numberOfFiles = 8;
-const byte displayLength = 16;
+const byte SD_CS_Pin = 8; // SD chip select
+const byte numberOfFiles = 8; // Number of wordfiles
+const byte displayLength = 16; // LCD character columns (16x2)
 
 // Pin definitions for buttons
 // A5 - 19; A4 - 18; A3 - 17; A2 - 16;
@@ -71,7 +75,7 @@ void setup()
 
   setBrightness(settings.brightness);
 
-  delay(2000);
+  Sleepy::loseSomeTime(2000);
 
   // See if the card is present and can be initialized
   while(!SD.begin(SD_CS_Pin)) {
@@ -82,8 +86,6 @@ void setup()
 
   initSettings();
 
-  Serial.println(fileTitles[2]);
-  //  lcd.print(fileTitles[0]);
 }
 
 
@@ -100,13 +102,10 @@ void loop(void) {
 
   lcd.clear();
   lcd.print(fileTitles[selectedFile]);
-  Serial.print("Current file: ");  
-  Serial.println(fileTitles[selectedFile]);
 
   if (words.countLines() == 0) {
     lcd.setCursor(0,1);
     lcd.print("File is empty"); 
-    Serial.println("Empty");
     lcd.setCursor(0,0);
   } 
   else {
