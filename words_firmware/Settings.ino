@@ -17,7 +17,15 @@ void createSettingsFile() {
   File settingsFile = SD.open(settingsFileName, FILE_WRITE);
 
   if (settingsFile) {
-    settingsFile.print("brightness:200");
+    settingsFile.println("brightness=200");
+    settingsFile.println("title0=WORDS_00.TXT");
+    settingsFile.println("title1=WORDS_01.TXT");
+    settingsFile.println("title2=WORDS_02.TXT");
+    settingsFile.println("title3=WORDS_03.TXT");
+    settingsFile.println("title4=WORDS_04.TXT");
+    settingsFile.println("title5=WORDS_05.TXT");
+    settingsFile.println("title6=WORDS_06.TXT");
+    settingsFile.println("title7=WORDS_07.TXT");
     settingsFile.close();  
   }
 }
