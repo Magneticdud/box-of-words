@@ -39,18 +39,6 @@ void showMenu() {
   }
   
   
-  
-  if (Serial.available()) {
-   byte input = Serial.read();
-  switch (input) {
-   case 'a': menuIndex--; if(menuIndex <= 0) menuIndex = numberOfFiles; break;
-   case 'd': menuIndex++; if (menuIndex >= numberOfFiles) menuIndex = 0;break;
-   case 's': selectedFile = menuIndex; break;
-  }
- 
- Serial.println(fileTitles[menuIndex]);
-  
-  }
     delay(100);
   
 }

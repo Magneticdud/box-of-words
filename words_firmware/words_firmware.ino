@@ -5,9 +5,9 @@
 #include <JeeLib.h> 
 #include <MemoryFree.h>
 
-#define SD_CS_PIN 8
+const byte SD_CS_Pin = 8;
 const byte numberOfFiles = 8;
-
+const byte displayLength = 16;
 
 // Pin definitions for buttons
 // A5 - 19; A4 - 18; A3 - 17; A2 - 16;
@@ -58,7 +58,7 @@ void setup()
   
   Serial.begin(9600);
     
-  lcd.begin(16, 2);
+  lcd.begin(displayLength, 2);
   
   lcd.print("   BoxOfWords   ");
   lcd.setCursor(0,1);
@@ -69,7 +69,7 @@ void setup()
   delay(2000);
 
   // See if the card is present and can be initialized
-  while(!SD.begin(SD_CS_PIN)) {
+  while(!SD.begin(SD_CS_Pin)) {
     lcd.clear();
     lcd.print("Insert SD card.");
     Sleepy::loseSomeTime(2000);
@@ -112,6 +112,7 @@ void loop(void) {
       while (wait) {
         
         byte pressedBtn = getPressedBtn();
+        
         switch (pressedBtn) {
           case btnRight:
             wait = false;
@@ -124,15 +125,15 @@ void loop(void) {
             showLoadingMsg();
             return;
             break;
+          default:
+            if (randomWord.length() > displayLength) {
+              lcd.clear();
+              marquee(randomWord); 
+            }
+          break;
         }
    
-        if (Serial.available()) {
-	  byte read = Serial.read();
-	  switch (read) {
-	    case 'd': wait = false; break;
-	    case 'w': selectedFile = -1; wait = false; break;
-	  }
-	}
+      
       }
     }
   }
