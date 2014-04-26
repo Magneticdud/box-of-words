@@ -8,21 +8,19 @@ void showMenu() {
     lcd.print(fileTitles[menuIndex]);
   }
   
-  buttonRight.update();
-  buttonLeft.update();
-  buttonEnter.update();
+  byte pressedBtn = getPressedBtn();
   
-  if (buttonEnter.read() == LOW) {
+  if (pressedBtn == btnEnter) {
     selectedFile = menuIndex;
     return;
   }
   
-  if (buttonRight.read() == LOW) {
+  if (pressedBtn == btnRight) {
     menuIndex--; if(menuIndex <= 0) menuIndex = NUMBER_OF_FILES;
     return;
   }
   
-  if (buttonLeft.read() == LOW) {
+  if (pressedBtn == btnLeft) {
     menuIndex++; if (menuIndex >= NUMBER_OF_FILES) menuIndex = 0;
     return;
   }

@@ -2,13 +2,22 @@
 #include <SD.h>
 #include <PortsLCD.h>
 #include "WordFile.h"
-#include <Bounce2.h>
 #include <JeeLib.h> 
 #include <MemoryFree.h>
 
 #define SD_CS_PIN 8
 #define NUMBER_OF_FILES 8
 
+
+// Pin definitions for buttons
+// A5 - 19; A4 - 18; A3 - 17; A2 - 16;
+const byte btnEnter = A5;
+const byte btnBack = A4;
+const byte btnLeft = A3;
+const byte btnRight = A2;
+
+// Max analogRead value for a button to be considered LOW / active
+const byte btnLowMaxThreshold = 100;
 
 // Setup watchdog
 ISR(WDT_vect) { Sleepy::watchdogEvent(); }
@@ -27,32 +36,22 @@ LiquidCrystal lcd(9, 7, 5, 4, 3, 2);
 char* fileList[] = {"WORDS_00.TXT","WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT","WORDS_04.TXT","WORDS_05.TXT","WORDS_06.TXT", "WORDS_07.TXT"};
 String fileTitles[8] = {"WORDS_00.TXT","WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT","WORDS_04.TXT","WORDS_05.TXT","WORDS_06.TXT", "WORDS_07.TXT"};
 
-Bounce buttonLeft = Bounce();
-Bounce buttonRight = Bounce();
-Bounce buttonEnter = Bounce();
-Bounce buttonBack = Bounce();
-
 int selectedFile = -1;
 boolean wait = true;
 
 void setup()
 {
   
-  // make sure that the default chip select pin is set to
-  // output, even if you don't use it:
+  // Make sure that the default chip select pin is set to
+  // output, even if you don't use it
   pinMode(10, OUTPUT);
   
-  pinMode(A5, INPUT_PULLUP);
-  pinMode(A4, INPUT_PULLUP);
-  pinMode(A3, INPUT_PULLUP);
-  pinMode(A2, INPUT_PULLUP);
-  pinMode(A1, INPUT_PULLUP);
-  pinMode(A0, INPUT_PULLUP);
- 
-  buttonLeft.attach(A5);
-  buttonRight.attach(A4);
-  buttonEnter.attach(A3);
-  buttonBack.attach(A2);
+  // Set button pins as inputs with internal Atmega 20k pullup resistors enabled
+  pinMode(btnEnter, INPUT_PULLUP);
+  pinMode(btnBack, INPUT_PULLUP);
+  pinMode(btnLeft, INPUT_PULLUP);
+  pinMode(btnRight, INPUT_PULLUP);
+  
   
   Serial.begin(9600);
     
@@ -110,20 +109,13 @@ void loop(void) {
       wait = true;
       
       while (wait) {
-        buttonEnter.update();
-        buttonRight.update();
-        buttonBack.update();
         
-        if (buttonEnter.read() == LOW) {
+        
+        if (getPressedBtn() == btnRight) {
           wait = false;
           delay(50);
         }
-        
-/*        if (buttonBack.read() == LOW) {
-          selectedFile = -1;
-          wait = false;
-        }
-  */      
+   
         if (Serial.available()) {
 	  byte read = Serial.read();
 	  switch (read) {
