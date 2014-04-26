@@ -6,15 +6,15 @@
 #include <MemoryFree.h>
 
 #define SD_CS_PIN 8
-#define NUMBER_OF_FILES 8
+const byte numberOfFiles = 8;
 
 
 // Pin definitions for buttons
 // A5 - 19; A4 - 18; A3 - 17; A2 - 16;
 const byte btnEnter = A5;
-const byte btnBack = A4;
+const byte btnBack = A2;
 const byte btnLeft = A3;
-const byte btnRight = A2;
+const byte btnRight = A4;
 
 // Max analogRead value for a button to be considered LOW / active
 const byte btnLowMaxThreshold = 100;
@@ -37,7 +37,10 @@ char* fileList[] = {"WORDS_00.TXT","WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT",
 String fileTitles[8] = {"WORDS_00.TXT","WORDS_01.TXT","WORDS_02.TXT","WORDS_03.TXT","WORDS_04.TXT","WORDS_05.TXT","WORDS_06.TXT", "WORDS_07.TXT"};
 
 int selectedFile = -1;
+byte menuIndex = 0;
 boolean wait = true;
+
+boolean refreshMenuDisplay = true;
 
 void setup()
 {
@@ -55,12 +58,11 @@ void setup()
   
   Serial.begin(9600);
     
-  lcd.begin(16,2);
+  lcd.begin(16, 2);
   
-  lcd.noAutoscroll();
   lcd.print("   BoxOfWords   ");
   lcd.setCursor(0,1);
-  lcd.print("A. Roots 2014-04");
+  lcd.print("for improvisers");
     
   setBrightness(settings.brightness);
   
@@ -75,45 +77,53 @@ void setup()
   
   initSettings();
 
-  lcd.clear();
-
-  lcd.print(fileTitles[0]);
+Serial.println(fileTitles[2]);
+//  lcd.print(fileTitles[0]);
 }
 
 
 
 void loop(void) {
   
-/*  while (selectedFile == -1) {
+  while (selectedFile == -1) {
     showMenu();
+    delay(10);
   }
-  */
-  selectedFile = 0;
   
   WordFile words = WordFile(fileList[selectedFile]);
   words.init();  
-  
+
   lcd.clear();
   lcd.print(fileTitles[selectedFile]);
+  Serial.print("Current file: ");  Serial.println(fileTitles[selectedFile]);
   
   if (words.countLines() == 0) {
     lcd.setCursor(0,1);
     lcd.print("File is empty"); 
+    Serial.println("Empty");
     lcd.setCursor(0,0);
   } else {
-    
+
     while (selectedFile != -1) {
       String randomWord =  words.getRandomWord();
-      lcd.clear();
-      displayWord(randomWord);
+      displayWord(randomWord, selectedFile);
       wait = true;
-      
+
       while (wait) {
         
-        
-        if (getPressedBtn() == btnRight) {
-          wait = false;
-          delay(50);
+        byte pressedBtn = getPressedBtn();
+        switch (pressedBtn) {
+          case btnRight:
+            wait = false;
+            delay(50);
+            break;
+          case btnBack:
+            selectedFile = -1;
+            wait = false;
+            refreshMenuDisplay = true;
+            showLoadingMsg();
+            return;
+            break;
         }
    
         if (Serial.available()) {

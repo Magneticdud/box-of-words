@@ -1,9 +1,9 @@
 
-#define SETTINGS_FILE "SETTINGS.TXT"
+char* settingsFileName = "SETTINGS.TXT";
 
 void initSettings() {
   
-  if (SD.exists(SETTINGS_FILE)) {
+  if (SD.exists(settingsFileName)) {
     readSettingsFile();
   } else {
    createSettingsFile(); 
@@ -12,7 +12,8 @@ void initSettings() {
 }
 
 void createSettingsFile() {
-  File settingsFile = SD.open(SETTINGS_FILE, FILE_WRITE);
+  Serial.println("Creating a new settings file");
+  File settingsFile = SD.open(settingsFileName, FILE_WRITE);
   
   if (settingsFile) {
     settingsFile.print("brightness:200");
@@ -23,7 +24,7 @@ void createSettingsFile() {
 // http://jurgen.gaeremyn.be/index.php/arduino/reading-configuration-file-from-an-sd-card.html
 void readSettingsFile() {
 
-  File settingsFile = SD.open(SETTINGS_FILE);
+  File settingsFile = SD.open(settingsFileName);
   
   char character;
   String description = "";
@@ -79,6 +80,7 @@ void readSettingsFile() {
            } while(character != '\n');
            
 fileTitles[0] = value;
+
         
         } 
         else if(description == "title1") {
