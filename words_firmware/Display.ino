@@ -45,7 +45,8 @@ void marquee( String text)
         return;
       }
     }
-    Sleepy::loseSomeTime(180);
+
+    delay(settings.scrollSpeed); // Don't pass `byte scrollSpeed` to Sleepy
     pos = pos + 1;
   }
   Sleepy::loseSomeTime(300);

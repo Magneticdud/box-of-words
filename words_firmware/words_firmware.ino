@@ -31,11 +31,13 @@ ISR(WDT_vect) {
 
 typedef struct Settings {
   byte brightness;
+  int scrollSpeed;
 } 
 Settings;
 
 Settings settings = {
-  .brightness = 255
+  .brightness = 255,
+  .scrollSpeed = 180
 };
 
 LiquidCrystal lcd(9, 7, 5, 4, 3, 2);
@@ -85,7 +87,7 @@ void setup()
   }
 
   initSettings();
-
+  setBrightness(settings.brightness);
 }
 
 

@@ -1,4 +1,5 @@
 brightness=199
+scrollSpeed=180
 title0=Emotions
 title1=Professions
 title2=Relationships

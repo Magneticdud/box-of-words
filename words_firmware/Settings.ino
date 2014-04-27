@@ -18,6 +18,7 @@ void createSettingsFile() {
 
   if (settingsFile) {
     settingsFile.println("brightness=200");
+    settingsFile.println("scrollSpeed=180");
     settingsFile.println("title0=WORDS_00.TXT");
     settingsFile.println("title1=WORDS_01.TXT");
     settingsFile.println("title2=WORDS_02.TXT");
@@ -38,7 +39,6 @@ void readSettingsFile() {
   char character;
   String description = "";
   String value = "";
-  boolean valid = true;
 
   // read from the file until there's nothing else in it:
   while (settingsFile.available()) {
@@ -66,25 +66,30 @@ void readSettingsFile() {
           if(isdigit(character)) {
             value.concat(character);
           } 
-          else if(character != '\n') {
-            // Use of invalid values
-            valid = false;
-          }
+          
           character = settingsFile.read();            
         };
-        if (valid) { 
           // Convert string to array of chars
           char charBuf[value.length()+1];
           value.toCharArray(charBuf,value.length()+1);
           // Convert chars to integer
           settings.brightness = atoi(charBuf);
-        } 
-        else {
-          // revert to default value for invalid entry in settings
-          settings.brightness = 200;
-        }
+      
+      }if(description == "scrollSpeed") {
+        value = "";
+        while(character != '\n') {
+          if(isdigit(character)) {
+            value.concat(character);
+          } 
+          
+          character = settingsFile.read();            
+        };
 
-
+          // Convert string to array of chars
+          char charBuf[value.length()+1];
+          value.toCharArray(charBuf,value.length()+1);
+          // Convert chars to integer
+          settings.scrollSpeed = atoi(charBuf);
       } 
       else if(description == "title0") {
 
