@@ -1,5 +1,4 @@
 Art Gallery
-Ambulance
 Adoption Clinic
 Amazon Rainforest
 Antique Store
@@ -10,7 +9,6 @@ Boat
 Bakery
 Bootcamp
 Castle
-Chessboard
 Cheese Factory
 Circus
 Dance Studio
@@ -18,9 +16,6 @@ Dragon's Lair
 Desert
 Egypt
 Execution Chamber
-Ferris Wheel
-Fire Station
-Fishing Pond
 Football Stadium
 Grocery Store
 Golf Course
@@ -37,20 +32,16 @@ Hospital
 Island
 Iceberg
 Ice Cream Shop
-Ice Age
 Jungle
-Jury Box
 Jewelry Store
 Karaoke Bar
 Knitting Circle
 Kangaroo Farm
-Lagoon
 Lighthouse
 Library
 Lifeboat
 Laundromat
 Mechanic's Shop
-Moon
 Mummy's Tomb
 Mountain Top
 Nursing Home
@@ -60,7 +51,6 @@ Newspaper Office
 Orchestra Pit
 Office Cubicle
 Picnic Spot
-Prom
 Pirate Ship
 Pet Store
 Post Office
@@ -68,7 +58,6 @@ Photography Class
 Police Station
 Quiz Show
 Robber's Hideout
-Safari
 School Lunchroom
 Nurse's Office
 Santa's Workshop

@@ -4,7 +4,6 @@ Ambassador
 Animator
 Architect
 Assassin
-Assistant
 Baker
 Barista
 Bartender

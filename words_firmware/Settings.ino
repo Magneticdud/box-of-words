@@ -15,18 +15,26 @@ void initSettings() {
 void createSettingsFile() {
   Serial.println("Creating a new settings file");
   File settingsFile = SD.open(settingsFileName, FILE_WRITE);
-
+  
   if (settingsFile) {
-    settingsFile.println("brightness=200");
-    settingsFile.println("scrollSpeed=180");
-    settingsFile.println("title0=WORDS_00.TXT");
-    settingsFile.println("title1=WORDS_01.TXT");
-    settingsFile.println("title2=WORDS_02.TXT");
-    settingsFile.println("title3=WORDS_03.TXT");
-    settingsFile.println("title4=WORDS_04.TXT");
-    settingsFile.println("title5=WORDS_05.TXT");
-    settingsFile.println("title6=WORDS_06.TXT");
-    settingsFile.println("title7=WORDS_07.TXT");
+    
+    char* lines[] = {
+    "brightness=200",
+    "scrollSpeed=180",
+    "title0=WORDS_00.TXT",
+    "title1=WORDS_01.TXT",
+    "title2=WORDS_02.TXT",
+    "title3=WORDS_03.TXT",
+    "title4=WORDS_04.TXT",
+    "title5=WORDS_05.TXT",
+    "title6=WORDS_06.TXT",
+    "title7=WORDS_07.TXT"
+    };
+  
+    for (byte i = 0; i < sizeof(lines); i++) {
+      settingsFile.println(lines[i]);
+    }
+    
     settingsFile.close();  
   }
 }
