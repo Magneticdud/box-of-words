@@ -39,6 +39,13 @@ void createSettingsFile() {
   }
 }
 
+/**
+ * Return True if the current line has more characters to read and the file is available
+**/
+boolean lineHasMoreChars(char currentChar, File file) {
+  return currentChar != '\n' && file.available();
+}
+
 // http://jurgen.gaeremyn.be/index.php/arduino/reading-configuration-file-from-an-sd-card.html
 void readSettingsFile() {
 
@@ -51,9 +58,10 @@ void readSettingsFile() {
   // read from the file until there's nothing else in it:
   while (settingsFile.available()) {
     character = settingsFile.read();
+
     if(character == '#')         {
       // Comment - ignore this line
-      while(character != '\n'){
+      while(lineHasMoreChars(character, settingsFile)){
         character = settingsFile.read();
       };
     } 
@@ -70,7 +78,7 @@ void readSettingsFile() {
 
       if(description == "brightness") {
         value = "";
-        while(character != '\n') {
+        while(lineHasMoreChars(character, settingsFile)) {
           if(isdigit(character)) {
             value.concat(character);
           } 
@@ -82,10 +90,11 @@ void readSettingsFile() {
           value.toCharArray(charBuf,value.length()+1);
           // Convert chars to integer
           settings.brightness = atoi(charBuf);
-      
-      }if(description == "scrollSpeed") {
+
+      }
+      if(description == "scrollSpeed") {
         value = "";
-        while(character != '\n') {
+        while(lineHasMoreChars(character, settingsFile)) {
           if(isdigit(character)) {
             value.concat(character);
           } 
@@ -106,7 +115,7 @@ void readSettingsFile() {
           value.concat(character);
           character = settingsFile.read();
         } 
-        while(character != '\n');
+        while(lineHasMoreChars(character, settingsFile));
 
         fileTitles[0] = value;
 
@@ -118,7 +127,7 @@ void readSettingsFile() {
           value.concat(character);
           character = settingsFile.read();
         } 
-        while(character != '\n');
+        while(lineHasMoreChars(character, settingsFile));
         fileTitles[1] = value;
       }
       else if(description == "title2") {
@@ -127,7 +136,7 @@ void readSettingsFile() {
           value.concat(character);
           character = settingsFile.read();
         } 
-        while(character != '\n');
+        while(lineHasMoreChars(character, settingsFile));
         fileTitles[2] = value;
 
       }
@@ -137,7 +146,7 @@ void readSettingsFile() {
           value.concat(character);
           character = settingsFile.read();
         } 
-        while(character != '\n');
+        while(lineHasMoreChars(character, settingsFile));
         fileTitles[3] = value;
 
       }
@@ -147,7 +156,7 @@ void readSettingsFile() {
           value.concat(character);
           character = settingsFile.read();
         } 
-        while(character != '\n');
+        while(lineHasMoreChars(character, settingsFile));
         fileTitles[4] = value;
 
 
@@ -158,7 +167,7 @@ void readSettingsFile() {
           value.concat(character);
           character = settingsFile.read();
         } 
-        while(character != '\n');
+        while(lineHasMoreChars(character, settingsFile));
         fileTitles[5] = value;
 
       }
@@ -168,7 +177,7 @@ void readSettingsFile() {
           value.concat(character);
           character = settingsFile.read();
         } 
-        while(character != '\n');
+        while(lineHasMoreChars(character, settingsFile));
         fileTitles[6] = value;  
       }
 
@@ -178,7 +187,7 @@ void readSettingsFile() {
           value.concat(character);
           character = settingsFile.read();
         } 
-        while(character != '\n');
+        while(lineHasMoreChars(character, settingsFile));
         fileTitles[7] = value;
 
 
@@ -187,7 +196,7 @@ void readSettingsFile() {
 
 
       else { // unknown parameter
-        while(character != '\n')
+        while(lineHasMoreChars(character, settingsFile))
           character = settingsFile.read();
       }
       description = "";
@@ -197,6 +206,7 @@ void readSettingsFile() {
     }
 
   }
+  
   // close the file:
   settingsFile.close();
 }

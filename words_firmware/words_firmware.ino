@@ -1,9 +1,13 @@
 /**
  * BoxOfWords firmware
  *
+ * Arduino based suggestion generator for improvisers.
+ * 
  * Licence: MIT
  * Author: Ando Roots <david@sqroot.eu> 2014
+ * Web: http://wp.me/p1OdID-114
 **/
+
 #include <SD.h>
 #include <PortsLCD.h> // From JeeLib, overrides LiquidCrystal
 #include "WordFile.h" // SD card wordfile reader
