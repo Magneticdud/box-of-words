@@ -1,98 +1,154 @@
-Husband-Wife
-Boyfriends
-Girlfriends
-A couple
-Father-Son
-Father-Daughter
-Mother-Son
-Mother-Daughter
-Bride-Groom
-Groom-Best Man
-Bride-Maid of Honor
-College Roomates
-Friends
-Old friends
-Neighbors
-Officer-Soldier
+A Couple
+Accountant-Client
+Actor-Director
+Actor-Fan
 Admiral-Sailor
-President-Aide
-Senator-Senator
-Clerk-Customer
-Waiter-Diner
+Alice-White Rabbit
+Alien-Explorer
+Artist-Critic
+Artist-Model
+Attorney-Client
+Author-Interviewer
+Bandmates
+Barber-Customer
+Bartender-Customer
+Bartender-Drunk
+Bartender-Patron
+Batman-Robin
+Billionaire-Servant
+Blind Dates
+Boss-Employee
+Boss-Secretary
+Boxer-Boxer
+Boxer-Trainer
+Boyfriends
+Bride-Bridesmaid
+Bride-Groom
+Bride-Maid Of Honor
+Brothers
+Call Girl-Customer
+Captain-First Mate
+Captor-Prisoner
+Carpenter-Assistant
 Chef-Assistant
 Chief-Indian
-Kung Fu Master-Student
-Teacher-Student
-King-Queen
-Driver-Passenger
-Bartender-Customer
-Boss-Employee
+Clerk-Customer
+Co-Pilots
 Co-Workers
-Artist-Model
-Mad Scientist-Assistant
+Coach-Athlete
+Coach-Player
+College Roomates
+Conductor-Musician
+Cop-Captain
+Cop-Criminal
+Cops
 Cowboy-Indian
 Cowboys
-Coach-Player
-Boxer-Trainer
-Boxer-Boxer
-Fellow Soldiers
-Sergeant-Private
-President-First Lady
-Brothers
-Sisters
-Priest-Confessor
-Bandmates
-Lawyer-Judge
-Lawyer-Client
-Knight-Lady
-Cops
-Cop-Captain
 Detective-Dame
-Robber-Victim
-Fellow Witches
-Ghosts
-Vampires
-Werevolves
-Blind Dates
-Fellow Politicians
-Rival Generals
-Captor-Prisoner
-Fellow Gods
-God-Devil
-Jesus-Apostle
-Pilot-Flight Attendant
-Flight Attendant-Passenger
-Passenger-Passenger
-Ship Captain-First Mate
-Knight-Dragon
-Wizard-Apprentice
-Magician-Assistant
-Landlord-Tenant
-Mafia Godfather-Henchman
-Salesman-Customer
-Mechanic-Customer
-Barber-Customer
-Trainer-Trainee
-Carpenter-Assistant
-Doctor-Patient
-Doctor-Doctor
+Detective-Suspect
+Director-Actor
 Doctor-Nurse
-Missionary-Heathen
-Actor-Director
-Santa Claus-Easter Bunny
-Transformers
-Billionaire-Servant
-Boss-Secretary
-Fire Chief-Fireman
-Co-Pilots
-Guards
-Warden-Prisoner
-Cop-Criminal
-Mentor-Mentee
-Fellow Explorers
-Loanshark-Victim
+Doctor-Patient
+Doctors
+Dragon-Knight
+Driver-Passenger
+Drug-Dealer-Buyer
+Explorers
+Father-Daughter
+Father-Son
 Fellow Astronauts
+Fellow Gods
+Fellow Politicians
+Fellow Soldiers
+Fire Chief-Fireman
+Flight Attendant-Passenger
+Football Player-Referee
+Friends
+Gay Couple
+Ghost-Ghostbuster
+Ghosts
+Girlfriends
+God-Devil
+Gods
+Golfer-Caddy
+Groom-Best Man
+Guards
+Hairdresser-Client
+Help Desk-User
+Hitchhiker-Driver
+Hunter-Deer
+Husband-Wife
+Jailer-Prisoner
+Jesus-Apostle
+Jock-Geek
+King-Queen
+Knight-Dragon
+Knight-Lady
+Kung Fu Master-Student
+Landlord-Tenant
+Lawyer-Client
+Lawyer-Judge
+Loanshark-Victim
 Lovers
-Rival programmers
-Alien-explorer
-Ghost-ghostbuster
+Mad Scientist-Assistant
+Mafia Godfather-Henchman
+Magician-Assistant
+Manager-Employee
+Masseuse-Client
+Mechanic-Car Owner
+Mechanic-Customer
+Minister-Parishioner
+Missionary-Heathen
+Mother-Daughter
+Mother-Son
+Motorist-Pedestrian
+Nanny-Kid
+Neighbors
+Nurse-Patient
+Officer-Soldier
+Old Friends
+Parasite-Host
+Passengers
+Patient-Therapist
+Person-Their Conscience
+Pet-Owner
+Pilot-Attendant
+Plumber-Client
+Plumber-Homeowner
+Politician-Intern
+Politician-Voter
+Politicians
+Predator-Prey
+President-Aide
+President-First Lady
+Priest-Confessor
+Priest-Demon
+Princess-Fairy Godmother
+Psychic-Skeptic
+Rebel-Dictator
+Reporter-Celebrity
+Rival Generals
+Rival Programmers
+Robber-Victim
+Roommates
+Salesman-Customer
+Senator-Senator
+Sergeant-Private
+Siblings
+Singer-Pianist
+Sisters
+Spies
+Stripper-Customer
+Superhero-Sidekick
+Superhero-Villain
+Teacher-Student
+Tour Guide-Tourist
+Tourist-Native
+Trainer-Trainee
+Vampires
+Waiter-Diner
+Warden-Prisoner
+Werevolves
+Witches
+Wizard-Apprentice
+Writer-Editor

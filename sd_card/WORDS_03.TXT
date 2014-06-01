@@ -1,84 +1,129 @@
-Art Gallery
+A Villa
 Adoption Clinic
 Amazon Rainforest
+An Oasis
 Antique Store
+Arcade
+Army Base
+Art Gallery
 Attic
-Barbershop
-Balcony
-Boat
 Bakery
+Balcony
+Barbershop
+Baseball Diamond
+Bat Cave
+Behind a Waterfall
+Boat
 Bootcamp
+Brewery
+Car Wash
 Castle
 Cheese Factory
 Circus
+Clock Tower
+Cow Pasture
+Cyber Space
 Dance Studio
-Dragon's Lair
 Desert
+Double Decker Bus
+Dragon's Lair
+Dungeon
 Egypt
+Elephant Graveyard
+Emergency Room
 Execution Chamber
+Fire Station
 Football Stadium
-Grocery Store
-Golf Course
-Ghost Town
-Garbage Dump
 Garage
+Garbage Dump
+Gas Station
+Ghost Town
 Goldmine
-Gypsy Camp
+Golf Course
 Grand Canyon
+Grocery Store
+Gypsy Camp
 Hardware Store
+Heaven
 Helicopter
 Hogwarts
 Hospital
-Island
-Iceberg
 Ice Cream Shop
-Jungle
+Iceberg
+Island
+Jazz Club
 Jewelry Store
-Karaoke Bar
-Knitting Circle
+Jungle
+Junkyard
 Kangaroo Farm
-Lighthouse
+Karaoke Bar
+Kick Boxing Studio
+Knitting Circle
+Laundromat
 Library
 Lifeboat
-Laundromat
+Lighthouse
+Lost City
+Marina
+Meat Packing Plant
 Mechanic's Shop
-Mummy's Tomb
 Mountain Top
-Nursing Home
+Mummy's Tomb
 News Station
-Nightclub
 Newspaper Office
-Orchestra Pit
-Office Cubicle
-Picnic Spot
-Pirate Ship
-Pet Store
-Post Office
-Photography Class
-Police Station
-Quiz Show
-Robber's Hideout
-School Lunchroom
+Nightclub
+No Man's Land
 Nurse's Office
+Nursing Home
+Ocean Floor
+Office Cubicle
+Oil Rig
+Orchestra Pit
+Pet Store
+Photography Class
+Picnic Spot
+Pier
+Pirate Ship
+Police Station
+Post Office
+Quick Sand Pit
+Quiz Show
+Rain Forrest
+Recording Studio
+Robber's Hideout
+Roller Rink
 Santa's Workshop
-Ski Slope
-Summer Camp
-Spaceship
+School Lunchroom
 Second Hand Store
-Submarine
+Shooting Range
+Ski Slope
+Slaughter House
+Space Station
+Spaceship
 Stable
-Treehouse
+Submarine
+Summer Camp
+Super Market
+Swamp
+Sweat Shop
+The Red Carpet
 Travel Agency
+Tree House
+Treehouse
 Unemployment Office
+University
 Vampire's Home
-Volleyball Court
+Veranda
+Vineyard
 Volcano
-Witch's Cavern
+Volleyball Court
 Warehouse
-White House
-Wrestling Ring
-Wild West
-Woodshop Class
 Wedding Ceremony
+White House
+Wild West
+Wildlife Reserve
+Witch's Cavern
+Woodshop Class
+Wrestling Ring
 Yoga Class
 Zoo
