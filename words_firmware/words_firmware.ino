@@ -19,10 +19,10 @@ const byte displayLength = 16; // LCD character columns (16x2)
 
 // Pin definitions for buttons
 // A5 - 19; A4 - 18; A3 - 17; A2 - 16;
-const byte btnEnter = A5;
-const byte btnBack = A2;
-const byte btnLeft = A3;
-const byte btnRight = A4;
+const byte btnEnter = A2;
+const byte btnBack = A5;
+const byte btnLeft = A4;
+const byte btnRight = A3;
 
 // Max analogRead value for a button to be considered LOW / active
 const byte btnLowMaxThreshold = 100;
@@ -139,7 +139,6 @@ void loop(void) {
           break;
         default:
           if (randomWord.length() > displayLength) {
-            lcd.clear();
             marquee(randomWord); 
           }
           break;

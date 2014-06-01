@@ -21,7 +21,9 @@ void showLoadingMsg() {
   lcd.print("Hold on...");
 }
 
-
+/**
+ * Don't use Sleepy here - will cause the backlight to flicker (as the PWM pin will be powered down?)
+ **/
 void marquee( String text)
 {
   int length = text.length();
@@ -32,7 +34,7 @@ void marquee( String text)
     lcd.print(text[pos]);
   }
 
-    Sleepy::loseSomeTime(1000);
+    delay(1000);
   pos = 1;
 
 
@@ -46,10 +48,10 @@ void marquee( String text)
       }
     }
 
-    delay(settings.scrollSpeed); // Don't pass `byte scrollSpeed` to Sleepy
+    delay(settings.scrollSpeed);
     pos = pos + 1;
   }
-  Sleepy::loseSomeTime(300);
+  delay(900);
 }
 
 
