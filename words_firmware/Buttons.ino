@@ -1,10 +1,21 @@
-
+/**
+ * BoxOfWords firmware
+ *
+ * Pushbutton-related functions
+ *
+ * Licence: MIT
+ * Author: Ando Roots <david@sqroot.eu> 2014
+ * Web: http://wp.me/p1OdID-114
+ **/
 
 /**
  * Get the code for the currently pressed button.
  * 
  * Returns one of the button constants (ex. getPressedBtn() == btnLeft)
  * or 0 when no button is currently pressed.
+ *
+ * Does not use the Bounce library due to hardware errors (the PCB solder traces "leak"). Uses a hack to work around that.
+ *
  **/
 byte getPressedBtn() {
 
@@ -15,15 +26,13 @@ byte getPressedBtn() {
     readButton(btnLeft),
     readButton(btnRight)
     };
-
-
+    
+    
     // Determine whether any of the buttons is currently active
     boolean hasLow = false;
   for (byte i = 0; i < 4; i++) {
     if (buttonValues[i] <= btnLowMaxThreshold) {
       hasLow = true;
-    } 
-    else {
     }
   }
 
@@ -35,7 +44,7 @@ byte getPressedBtn() {
   // Determine which of the button pins has a analogRead value closest to GND
   byte lowestIndex = 0;
   for (byte i = 1; i < 4; i++) {
-    if (buttonValues[i] < buttonValues[i-1]) {
+    if (buttonValues[i] < buttonValues[lowestIndex]) {
       lowestIndex = i;
     }
   }
@@ -44,16 +53,12 @@ byte getPressedBtn() {
   switch (lowestIndex) {
   case 0: 
     return btnEnter; 
-    break;
   case 1: 
     return btnBack; 
-    break;
   case 2: 
     return btnLeft; 
-    break;
   case 3: 
     return btnRight; 
-    break;
   }
 
   // This should never happen, yet you never know...

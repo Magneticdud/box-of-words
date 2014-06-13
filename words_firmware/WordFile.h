@@ -1,6 +1,12 @@
-/*
-  WordFile.h
- */
+/**
+ * BoxOfWords firmware
+ *
+ * Wordfile library header
+ *
+ * Licence: MIT
+ * Author: Ando Roots <david@sqroot.eu> 2014
+ * Web: http://wp.me/p1OdID-114
+ **/
 #ifndef WordFile_h
 #define WordFile_h
 

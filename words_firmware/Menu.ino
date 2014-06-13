@@ -1,26 +1,41 @@
-
+/**
+ * BoxOfWords firmware
+ *
+ * Main menu related functions
+ *
+ * Licence: MIT
+ * Author: Ando Roots <david@sqroot.eu> 2014
+ * Web: http://wp.me/p1OdID-114
+ **/
+ 
+/**
+ * Display the main menu - select which wordfile to open
+**/
 void showMenu() {
 
+  // Refresh the menu?
   if (refreshMenuDisplay) {
     showFileName(menuIndex);
     refreshMenuDisplay = false;
     delay(50);
   }
 
+
+  // Handle user input
   byte pressedBtn = getPressedBtn();
 
   switch (pressedBtn) {
-  case btnEnter:
+  case btnEnter: // Select the current wordfile
     selectedFile = menuIndex;  
     break;
-  case btnRight:
+  case btnRight: // Display the next wordfile name
     refreshMenuDisplay = true;
     menuIndex++;
     if (menuIndex == numberOfFiles) {
       menuIndex = 0;    
     }
     break;
-  case btnLeft:
+  case btnLeft: // Display the previous wordfile name
     refreshMenuDisplay = true;
     if(menuIndex == 0) {
       menuIndex = numberOfFiles - 1;    
@@ -41,6 +56,9 @@ void showMenu() {
 
 }
 
+/**
+ * Display the menu: str on the 1st row, wordfile name on the 2nd
+**/
 void showFileName(byte fileIndex) {
   lcd.clear();
   lcd.setCursor(0, 0);

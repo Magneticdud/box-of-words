@@ -1,5 +1,19 @@
+/**
+ * BoxOfWords firmware
+ *
+ * LCD-related functions
+ *
+ * Licence: MIT
+ * Author: Ando Roots <david@sqroot.eu> 2014
+ * Web: http://wp.me/p1OdID-114
+ **/
+
+// PWM pin for setting the LCD background LED brightness
 #define LCD_LED_PIN 10
 
+/**
+ * Display a word from a wordfile on the LCD
+**/
 void displayWord(String randomWord, byte selectedFile) {
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -11,10 +25,16 @@ void displayWord(String randomWord, byte selectedFile) {
   lcd.setCursor(0,0);
 }
 
+/**
+ * Adjust LCD LED backlight brightness (PWM pin)
+**/
 void setBrightness(byte level) {
   analogWrite(LCD_LED_PIN, level);
 }
 
+/**
+ * Show a simple loading message on the LCD
+**/
 void showLoadingMsg() {
   lcd.clear();
   lcd.setCursor(0,0);
@@ -22,6 +42,8 @@ void showLoadingMsg() {
 }
 
 /**
+ * Scroll a longer-than-16 char word on the LCD
+ *
  * Don't use Sleepy here - will cause the backlight to flicker (as the PWM pin will be powered down?)
  **/
 void marquee( String text)

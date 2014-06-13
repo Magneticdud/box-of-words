@@ -4,7 +4,7 @@ Accountant
 Accounting Director
 Accounts Assistant
 Actor
-Actor/Businessman
+Actor
 Actuary
 Administrator
 Administrators
@@ -33,7 +33,7 @@ Assistant Manager
 Associate
 Astronaut
 Astronomer
-Attorney (4)
+Attorney
 Attorney / Lawyer
 Attorney/Business Owner
 Attorney/Businessperson
@@ -73,24 +73,23 @@ Bus Drivers
 Business Analyst
 Business Development Analyst
 Business Development Manager
-Business Executive (3)
+Business Executive
 Business Executive/Artist
 Business Intelligence Analyst
 Business Manager
 Business Operations Manager
-Business Owner (3)
+Business Owner
 Business Person
 Businessman
-Businessman (10)
 Businessman/Consultant
 Businessman/Educator
-Businessman/Entrepreneur (2)
+Businessman/Entrepreneur
 Businessman/Entrepreneur/Father
 Businessman/Father/Entrepreneur
 Businessman/Olympics Advisor
 Businessman/Prizefighter/Father
 Businessman/Producer/Writer
-Businesswoman (2)
+Businesswoman
 Businesswoman/Environmental Engineer
 Butcher
 Buyer
@@ -132,7 +131,6 @@ Comedian
 Comic Book Creator
 Comic Book Writer
 Commercial Manager
-Commissioning Editor (Book Publishing)
 Community College Teacher
 Company Director
 Company Manager
@@ -216,7 +214,7 @@ Driver
 Ecologist
 Economist
 Editor
-Educator (2)
+Educator
 Educator/Small Businesswoman
 Educators
 Electrical Engineer
@@ -228,7 +226,7 @@ Emt
 Endocrinologist
 Energy Consultant/Entrepreneur
 Engineer
-Engineer (3)
+Engineer
 Engineering Technician
 Engineering Technologist
 Engineers
@@ -504,14 +502,12 @@ Pulmonologist
 Puppeteer
 Quantity Surveyor
 Race Car Driver
-Radio Producer/Businessman
+Radio Producer
 Radiologist
 Radiology Technologist
-Railroad Switchman/Brakeman
 Real Estate Agent
 Real Estate Appraiser
 Real Estate Developer
-Realtor/Businessman
 Receptionist
 Recreation And Fitness Worker
 Recreational Therapist
@@ -532,7 +528,6 @@ Review
 Risk Management Manager
 Rocket Scientist
 Running Crew
-RéPéTiteur
 Sailor
 Sales
 Sales Account Manager
@@ -542,7 +537,6 @@ Sales Executive
 Sales Manager
 Sales People
 Salesman
-Salesman/Business
 Salesperson
 Satellite Project Manager
 Sawfiler
@@ -563,7 +557,7 @@ Sculptor
 Seamstress
 Secretaries
 Secretary
-Security Director (Facilities, Personnel, Etc.)
+Security Director
 Senior Consultant
 Senior Data Analyst
 Senior Engineer
@@ -581,7 +575,7 @@ Sign Language Interpreter
 Silversmith
 Singer
 Singers
-Small Business Owner (3)
+Small Business Owner
 Soaper
 Social Worker
 Software Analyst
@@ -625,7 +619,7 @@ Tax Manager
 Taxi Dancer
 Taxi Driver
 Teacher
-Teacher (2)
+Teacher
 Teacher/Journalist
 Teachers
 Teaching Artist

@@ -1,6 +1,18 @@
+/**
+ * BoxOfWords firmware
+ *
+ * Settings file related functions
+ *
+ * Licence: MIT
+ * Author: Ando Roots <david@sqroot.eu> 2014
+ * Web: http://wp.me/p1OdID-114
+ **/
 
 char* settingsFileName = "SETTINGS.TXT";
 
+/**
+ * Load the contents of the settings file or create a new settings file if it doesn't exist
+**/
 void initSettings() {
 
   if (SD.exists(settingsFileName)) {
@@ -9,11 +21,12 @@ void initSettings() {
   else {
     createSettingsFile(); 
   }
-
 }
 
+/**
+ * Create a new settings file
+**/
 void createSettingsFile() {
-  Serial.println("Creating a new settings file");
   File settingsFile = SD.open(settingsFileName, FILE_WRITE);
   
   if (settingsFile) {
@@ -46,7 +59,11 @@ boolean lineHasMoreChars(char currentChar, File file) {
   return currentChar != '\n' && file.available();
 }
 
-// http://jurgen.gaeremyn.be/index.php/arduino/reading-configuration-file-from-an-sd-card.html
+/**
+ * Read the contents of the settings file and set program variables accordingly.
+ * Ugly, but works.
+ * Original code from http://jurgen.gaeremyn.be/index.php/arduino/reading-configuration-file-from-an-sd-card.html
+**/
 void readSettingsFile() {
 
   File settingsFile = SD.open(settingsFileName);
@@ -190,10 +207,7 @@ void readSettingsFile() {
         while(lineHasMoreChars(character, settingsFile));
         fileTitles[7] = value;
 
-
       }
-
-
 
       else { // unknown parameter
         while(lineHasMoreChars(character, settingsFile))
