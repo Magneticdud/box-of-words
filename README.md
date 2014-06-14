@@ -3,12 +3,22 @@
 BoxOfWords is a handheld, cigarette-box sized electronics project for improvisational theater practitioners.
 The purpose of the project is to offer randomized word suggestions during an improv workshop or a training session.
 
-BoxOfWords has a memory card reader, control buttons and a small LCD screen. The improviser selects his preferred word file (emotions, locations, professions...)
-and can call up new randomized suggestions to the LCD screen with a press of a button.
+![Finished project](https://raw.githubusercontent.com/anroots/box-of-words/master/build_photos/finished_small.jpg)
 
-The project was built as a present to [Trent Pancy](http://http://www.trentasaurus.com/), the organizer of the [Third Annual Finland International Improv Festival](finlandimprovfestival.com).
+BoxOfWords has a memory card reader, control buttons and a small LCD screen. The improviser selects his 
+preferred word file (emotions, locations, professions...) and can call up new randomized suggestions
+to the LCD screen with a press of a button.
 
-# Licence
+The project was built as a present to [Trent Pancy](http://http://www.trentasaurus.com/), the organizer of the [Third Annual Finland International Improv Festival](http://finlandimprovfestival.com).
+
+## Links
+
+* [Knowable Project Page](http://knowable.org/projects/97/showcase)
+* [BoxOfWords - Arduino-Based Suggestion Generator for Improvisers](http://sqroot.eu/2014/06/boxofwords-arduino-based-suggestion-generator-for-improvisers)
+* [Third Annual Finland International Improv Festival](http://finlandimprovfestival.com)
+* [Improvisational Theater in Estonia](http://improv.ee/in-english/)
+
+## Licence
 
 All source code, schematics and images of this project are licenced under the MIT licence: use them to learn or build upon.
 
