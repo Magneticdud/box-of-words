@@ -15,7 +15,7 @@
 #include "WordFile.h" // SD card wordfile reader
 #include <JeeLib.h>  // Power saving functions
 
-const byte SD_CS_Pin = 8; // SD chip select
+const byte SD_CS_Pin = 10; // SD chip select
 const byte numberOfFiles = 8; // Number of wordfiles
 const byte displayLength = 16; // LCD character columns (16x2)
 
