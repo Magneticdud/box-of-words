@@ -1,22 +1,8 @@
 # Box Of Words
 
-BoxOfWords is a handheld, cigarette-box sized electronics project for improvisational theater practitioners.
-The purpose of the project is to offer randomized word suggestions during an improv workshop or a training session.
+This is a fork of [BoxOfWords](https://github.com/anroots/box-of-words) which is a handheld, cigarette-box sized electronics project for improvisational theater practitioners.
 
-![Finished project](https://raw.githubusercontent.com/anroots/box-of-words/master/build_photos/finished_small.jpg)
-
-BoxOfWords has a memory card reader, control buttons and a small LCD screen. The improviser selects his 
-preferred word file (emotions, locations, professions...) and can call up new randomized suggestions
-to the LCD screen with a press of a button.
-
-The project was built as a present to [Trent Pancy](http://http://www.trentasaurus.com/), the organizer of the [Third Annual Finland International Improv Festival](http://finlandimprovfestival.com).
-
-## Links
-
-* [Knowable Project Page](http://knowable.org/projects/97/showcase)
-* [BoxOfWords - Arduino-Based Suggestion Generator for Improvisers](http://sqroot.eu/2014/06/boxofwords-arduino-based-suggestion-generator-for-improvisers)
-* [Third Annual Finland International Improv Festival](http://finlandimprovfestival.com)
-* [Improvisational Theater in Estonia](http://improv.ee/in-english/)
+I will use an [Adafruit Data Logger Shield](https://learn.adafruit.com/adafruit-data-logger-shield), meaning A4 and A5 are used for the RTC, and D10,D11,D12,D13 are used for the SD card
 
 ## Licence
 
