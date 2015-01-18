@@ -9,36 +9,28 @@
  **/
 
 // PWM pin for setting the LCD background LED brightness
-#define LCD_LED_PIN 10
+//#define LCD_LED_PIN 10
 
 /**
  * Display a word from a wordfile on the LCD
 **/
 void displayWord(String randomWord, byte selectedFile) {
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print(fileTitles[selectedFile]);
-  lcd.setCursor(0,1);
-
-  lcd.print(randomWord);
-
-  lcd.setCursor(0,0);
+  Serial.println(fileTitles[selectedFile]);
+  Serial.println(randomWord);
 }
 
 /**
  * Adjust LCD LED backlight brightness (PWM pin)
 **/
 void setBrightness(byte level) {
-  analogWrite(LCD_LED_PIN, level);
+  //analogWrite(LCD_LED_PIN, level);
 }
 
 /**
  * Show a simple loading message on the LCD
 **/
 void showLoadingMsg() {
-  lcd.clear();
-  lcd.setCursor(0,0);
-  lcd.print("Hold on...");
+  Serial.println("Hold on...");
 }
 
 /**
@@ -48,7 +40,7 @@ void showLoadingMsg() {
  **/
 void marquee( String text)
 {
-  int length = text.length();
+  /*int length = text.length();
   int pos;
 
   lcd.setCursor(0, 1);
@@ -73,7 +65,8 @@ void marquee( String text)
     delay(settings.scrollSpeed);
     pos = pos + 1;
   }
-  delay(900);
+  delay(900);*/
+  Serial.println(text);
 }
 
 

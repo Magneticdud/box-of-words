@@ -60,10 +60,7 @@ void showMenu() {
  * Display the menu: str on the 1st row, wordfile name on the 2nd
 **/
 void showFileName(byte fileIndex) {
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Choose a list:");
-  lcd.setCursor(0, 1);
-  lcd.print(fileTitles[menuIndex]);
+  Serial.println("Choose a list:");
+  Serial.println(fileTitles[menuIndex]);
 }
 

@@ -9,10 +9,9 @@
  * Author: Ando Roots <david@sqroot.eu> 2014
  * Web: http://wp.me/p1OdID-114
  **/
-
+ 
 #include <SPI.h>
 #include <SD.h>
-#include <PortsLCD.h> // From JeeLib, overrides LiquidCrystal
 #include "WordFile.h" // SD card wordfile reader
 #include <JeeLib.h>  // Power saving functions
 
@@ -21,11 +20,10 @@ const byte numberOfFiles = 8; // Number of wordfiles
 const byte displayLength = 16; // LCD character columns (16x2)
 
 // Pin definitions for buttons
-// A5 - 19; A4 - 18; A3 - 17; A2 - 16;
-const byte btnEnter = A5;
-const byte btnBack = A2;
-const byte btnLeft = A3;
-const byte btnRight = A4;
+const byte btnEnter = A0;
+const byte btnBack = A1;
+const byte btnLeft = A2;
+const byte btnRight = A3;
 
 // Max analogRead value for a button to be considered LOW / active (hack)
 const byte btnLowMaxThreshold = 100;
@@ -46,9 +44,6 @@ Settings settings = {
   .brightness = 255,
   .scrollSpeed = 180
 };
-
-// Init LCD, specify LCD pins
-LiquidCrystal lcd(9, 7, 5, 4, 3, 2);
 
 // Filenames of all wordfiles
 char* fileList[] = {
@@ -77,20 +72,12 @@ void setup()
   pinMode(btnLeft, INPUT_PULLUP);
   pinMode(btnRight, INPUT_PULLUP);
 
-  // Start 16x2 LCD op
-  lcd.begin(displayLength, 2);
-
-  // Show welcome message
-  setBrightness(settings.brightness);
-  lcd.print("   BoxOfWords   ");
-  lcd.setCursor(0,1);
-  lcd.print("for improvisers");
-  Sleepy::loseSomeTime(1500);
+  Serial.begin(9600);
+  Serial.println("Serial start");
 
   // See if the SD card is present and can be initialized. Wait until card is inserted.
   while(!SD.begin(SD_CS_Pin)) {
-    lcd.clear();
-    lcd.print("Insert SD card.");
+    Serial.println("Insert SD card.");
     Sleepy::loseSomeTime(2000);
   }
 
@@ -118,14 +105,11 @@ void loop(void) {
   words.init();  
 
   // Print the title of the file in the first row of the LCD
-  lcd.clear();
-  lcd.print(fileTitles[selectedFile]);
+  Serial.println(fileTitles[selectedFile]);
 
   // If the file is empty (0 lines), show an error message and move back to the main menu
   if (words.countLines() == 0) {
-    lcd.setCursor(0,1);
-    lcd.print("File is empty"); 
-    lcd.setCursor(0,0);
+    Serial.println("File is empty"); 
     delay(3000);
     selectedFile = -1;
     wait = false;
@@ -169,7 +153,6 @@ void loop(void) {
   }
 
 
-  lcd.clear();
   Sleepy::loseSomeTime(2000);
 }
 
