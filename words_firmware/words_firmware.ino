@@ -10,6 +10,7 @@
  * Web: http://wp.me/p1OdID-114
  **/
 
+#include <SPI.h>
 #include <SD.h>
 #include <PortsLCD.h> // From JeeLib, overrides LiquidCrystal
 #include "WordFile.h" // SD card wordfile reader
