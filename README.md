@@ -8,4 +8,4 @@ I will use an [Adafruit Data Logger Shield](https://learn.adafruit.com/adafruit-
 
 All source code, schematics and images of this project are licenced under the MIT licence: use them to learn or build upon.
 
-The default word files are licenced under Creative Commons Attribution 4.0 International. The label icons are mostly licenced as CC Attribution - see the attribution.md file in the labels directory.
+The default word files are licenced under Creative Commons Attribution 4.0 International.
